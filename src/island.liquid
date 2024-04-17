@@ -1,0 +1,41 @@
+---
+title: Islands!
+layout: base
+---
+<main>
+
+  <section>
+    <h1>Lorem Ipsum</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet id leo ultricies finibus. Duis at sem at risus euismod scelerisque. Quisque finibus neque tellus, vel lobortis leo congue sed. Duis ac lacus tortor. Praesent efficitur arcu quis pretium ultricies. Cras ac accumsan ligula, nec tristique ex. Integer eget elementum nunc. Suspendisse odio enim, iaculis a ligula et, facilisis blandit nunc. Duis eget risus tellus. Sed vel turpis magna. Curabitur viverra, dui ac sodales suscipit, lorem magna porttitor arcu, in maximus nulla mauris a urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean id ultricies odio, sit amet placerat leo.
+
+    </p>
+    <p>In ante nibh, maximus quis ipsum sit amet, rhoncus ornare nunc. Proin ultrices tempor nisl, et lacinia libero vehicula vitae. Nulla a ullamcorper mauris. Morbi quis eleifend est. Donec a orci tincidunt, tempus metus non, condimentum diam. Donec at viverra dui, et sollicitudin tellus. Fusce lobortis libero vel est dignissim, eu varius diam malesuada. In luctus sagittis arcu, vel dapibus nisl malesuada a. Nulla quam lacus, sodales vel lacinia id, laoreet sit amet erat. Aenean ultrices magna orci, sed semper ipsum semper eu. Nunc vestibulum diam vitae fermentum tempor. Praesent dapibus eget lorem sed gravida. Morbi tincidunt felis scelerisque mauris imperdiet malesuada. Quisque at felis fringilla, pulvinar nulla id, rutrum nisl. Nullam eget dictum elit.
+
+    </p>
+  </section>
+
+  <aside>
+    <div>
+      <is-land>This is an island.</is-land>
+    </div>
+    <div>
+      <is-land>
+        <vanilla-web-component class="demo-component">Vanilla web component</vanilla-web-component>
+      </is-land>
+    </div>
+  </aside>
+</main>
+
+
+<!-- Import method: -->
+<script type="module">
+  import { Island } from "/assets/is-land.js";
+  import "/assets/is-land-autoinit.js";
+  import "/assets/vanilla-web-component.js";
+</script>
+<style>
+  .island-hydrated {
+    background-color: yellow;
+    color: red;
+  }
+</style>

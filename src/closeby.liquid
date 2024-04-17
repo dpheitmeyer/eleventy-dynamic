@@ -1,0 +1,28 @@
+---
+title: Closest Parks to You!
+layout: base
+---
+<main>
+
+  <section>
+    <h1>National Park List</h1>
+    {% for p in parks.data %}
+      {{ p.name }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  </section>
+
+  <aside>
+    {% edge "liquid" parks %}
+      <h2>Your Location</h2>
+      <p>{{ geo.latitude }}, {{ geo.longitude }}</p>
+      <pre>{{ geo | json }}</pre>
+      <h2>Closest Parks</h2>
+      {% assign parksmodified = data | closeBy %}
+      <ul>
+        {% for p in parksmodified %}
+          <li>{{ p.name }} ({{ p._myDistanceMiles }} mi)</li>
+        {% endfor %}
+      </ul>
+    {% endedge %}
+  </aside>
+</main>

@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+header,
+footer {
+    padding: 1rem;
+    background-color: #ddd;
+}
+
+main {
+    display: grid;
+    gap: 0rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main aside";
+}
+
+main section {
+    grid-area: main;
+    padding: 1rem;
+    background-color: #ffe;
+}
+
+main aside {
+    grid-area: aside;
+    padding: 1rem;
+    background-color: #efe;
+}
+
+header {
+    display: flex;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
