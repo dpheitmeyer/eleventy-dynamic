@@ -1,10 +1,28 @@
 ---
-title: 11ty and Dyanmic sites with Jamstack
+title: 11ty and Edge Functions
 layout: base
 ---
-<h2>11ty and Netlify Edge Functions</h2>
-<ul>
-  <li>
-    <a href="/closeby/">National Parks close to me!</a>
-  </li>
-</ul>
+  <main>
+
+  <section>
+    <h1>National Park List</h1>
+    {% for p in parks.data %}
+      {{ p.name }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  </section>
+
+  <aside>
+    {% edge "liquid" parks %}
+      <h2>Closest Parks</h2>
+      {% assign parksWithDistance = data | closeBy %}
+      <ul>
+        {% for p in parksWithDistance %}
+          <li><a href="{{ p.url }}">{{ p.name }}</a> ({{ p._myDistanceMiles }} mi)</li>
+        {% endfor %}
+      </ul>
+      <h2>Your Location</h2>
+      <p>{{ geo.latitude }}, {{ geo.longitude }}</p>
+      <pre>{{ geo | json }}</pre>
+    {% endedge %}
+  </aside>
+</main>

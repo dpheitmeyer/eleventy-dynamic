@@ -8,4 +8,4 @@ publish = "dist"
 
 [[edge_functions]]
 function = "closest-parks"
-path = "/closeby/"
+path = "/"

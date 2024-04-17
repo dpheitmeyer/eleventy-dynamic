@@ -18,11 +18,6 @@ export default async (request, context) => {
       // eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
       eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
 
-      let randomUSLat = Math.floor(100 * Math.random() * (49 - 26))/100 + 26;
-      let randomUSLng = -(Math.floor(100 * Math.random() *(125 - 67))/100 + 67);
-      context.geo.latitude = randomUSLat;
-      context.geo.longitude = randomUSLng;
-
       eleventyConfig.addGlobalData("geo", context.geo);
 
       eleventyConfig.addFilter("closeBy", (parks) => {
